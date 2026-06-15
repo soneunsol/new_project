@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Focus — 오늘의 할 일</title>
+    <meta
+      name="description"
+      content="간단하게 오늘의 할 일을 기록하고 관리하는 랜딩페이지입니다."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="brand">🦊 Daily Focus</a>
+        <nav class="nav">
+          <a href="#features">기능</a>
+          <a href="#todo">할 일</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero-eyebrow">SIMPLE · FAST · FREE</p>
+        <h1 class="hero-title">오늘 할 일,<br />딱 한 곳에 모으세요.</h1>
+        <p class="hero-subtitle">
+          복잡한 설정 없이 바로 쓰는 할 일 관리. <br />
+          입력한 내용은 클라우드(Supabase)에 안전하게 저장됩니다.
+        </p>
+        <a href="#todo" class="btn btn-primary btn-lg">지금 시작하기</a>
+      </div>
+    </section>
+
+    <!-- 기능 소개 섹션 -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2 class="section-title">왜 Daily Focus 인가요?</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>빠른 기록</h3>
+            <p>한 줄 입력만으로 할 일이 바로 추가됩니다.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">☁️</div>
+            <h3>클라우드 저장</h3>
+            <p>Supabase 데이터베이스에 실시간으로 저장돼요.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">✅</div>
+            <h3>간편한 관리</h3>
+            <p>완료 체크와 삭제를 클릭 한 번으로 처리하세요.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 할 일 목록 섹션 (Supabase 연동) -->
+    <section id="todo" class="todo">
+      <div class="container">
+        <h2 class="section-title">나의 할 일 목록</h2>
+
+        <form id="todo-form" class="todo-form">
+          <input
+            id="todo-input"
+            class="todo-input"
+            type="text"
+            placeholder="할 일을 입력하고 Enter 를 누르세요"
+            autocomplete="off"
+            maxlength="200"
+            required
+          />
+          <button type="submit" class="btn btn-primary">추가</button>
+        </form>
+
+        <p id="todo-status" class="todo-status">불러오는 중…</p>
+
+        <ul id="todo-list" class="todo-list"></ul>
+      </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Daily Focus · Made with vanilla HTML/CSS/JS + Supabase</p>
+      </div>
+    </footer>
+
+    <!-- Supabase JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- 앱 스크립트 -->
+    <script src="./js/config.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
